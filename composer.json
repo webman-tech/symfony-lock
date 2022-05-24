@@ -2,7 +2,7 @@
   "name": "kriss/webman-lock",
   "type": "library",
   "license": "MIT",
-  "description": "Webman plugin kriss/webman-lock",
+  "description": "webman lock plugin",
   "require": {
     "php": ">=7.2",
     "symfony/lock": ">=5.0"

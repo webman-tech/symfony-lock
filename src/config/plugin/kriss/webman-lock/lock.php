@@ -4,7 +4,7 @@ use Symfony\Component\Lock\Store\FlockStore;
 use Symfony\Component\Lock\Store\RedisStore;
 
 return [
-    'storage' => 'file', // file/redis， file 不支持 ttl
+    'storage' => 'file', // file/redis， 建议使用 redis，file 不支持 ttl
     'storage_configs' => [
         'file' => [
             'class' => FlockStore::class,
