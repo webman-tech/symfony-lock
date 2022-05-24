@@ -43,7 +43,6 @@ class Locker extends \Kriss\WebmanLock\Locker
 
 ```php
 <?php
-<?php
 
 namespace app\controller;
 
