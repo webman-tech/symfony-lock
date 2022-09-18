@@ -1,15 +1,15 @@
 # webman-tech/symfony-lock
 
-webman lock plugin
+[symfony/lock](https://packagist.org/packages/symfony/lock) for webman
 
-## 简介
+## 介绍
 
-在 webman 中简化使用业务锁功能，使用 [symfony/lock](https://github.com/symfony/lock)
+在 webman 中简化使用业务锁功能
 
 解决以下问题：
 
 - 并发业务操作有时候需要锁来防止并发导致的数据插入或更新问题
-- 单独使用 symfony/lock 时一般使用 `$factory->createLock('key')`，此时 key 是一个字符串，不利于后期维护或多处使用
+- 单独使用 `symfony/lock` 时一般使用 `$factory->createLock('key')`，此时 key 是一个字符串，不利于后期维护或多处使用
 
 ##  安装
 
