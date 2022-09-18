@@ -16,6 +16,11 @@ class Locker
     }
 
     /**
+     * @var null|array
+     */
+    protected static $defaultConfig = null;
+
+    /**
      * 创建锁
      * @param string $key
      * @param float|null $ttl
@@ -25,13 +30,19 @@ class Locker
      */
     protected static function createLock(string $key, ?float $ttl = null, ?bool $autoRelease = null, ?string $prefix = null)
     {
-        $config = config('plugin.webman-tech.symfony-lock.lock.default_config', []);
+        if (static::$defaultConfig === null) {
+            static::$defaultConfig = config('plugin.webman-tech.symfony-lock.lock.default_config', []);
+        }
+        $config = static::$defaultConfig;
         $ttl = $ttl !== null ? $ttl : ($config['ttl'] ?? 300);
         $autoRelease = $autoRelease !== null ? $autoRelease : ($config['auto_release'] ?? true);
         $prefix = $prefix !== null ? $prefix : ($config['prefix'] ?? 'lock_');
         return static::getLockFactory()->createLock($prefix . $key, $ttl, $autoRelease);
     }
 
+    /**
+     * @var null|LockFactory
+     */
     protected static $factory = null;
 
     /**
