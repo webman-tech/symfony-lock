@@ -1,6 +1,6 @@
 <?php
 
-namespace Kriss\WebmanLock;
+namespace WebmanTech\SymfonyLock;
 
 use support\Container;
 use Symfony\Component\Lock\LockFactory;
@@ -25,7 +25,7 @@ class Locker
      */
     protected static function createLock(string $key, ?float $ttl = null, ?bool $autoRelease = null, ?string $prefix = null)
     {
-        $config = config('plugin.kriss.webman-lock.lock.default_config', []);
+        $config = config('plugin.webman-tech.symfony-lock.lock.default_config', []);
         $ttl = $ttl !== null ? $ttl : ($config['ttl'] ?? 300);
         $autoRelease = $autoRelease !== null ? $autoRelease : ($config['auto_release'] ?? true);
         $prefix = $prefix !== null ? $prefix : ($config['prefix'] ?? 'lock_');
@@ -40,8 +40,8 @@ class Locker
     protected static function getLockFactory()
     {
         if (static::$factory === null) {
-            $storage = config('plugin.kriss.webman-lock.lock.storage');
-            $storageConfig = config('plugin.kriss.webman-lock.lock.storage_configs')[$storage];
+            $storage = config('plugin.webman-tech.symfony-lock.lock.storage');
+            $storageConfig = config('plugin.webman-tech.symfony-lock.lock.storage_configs')[$storage];
             if (is_callable($storageConfig['construct'])) {
                 $storageConfig['construct'] = call_user_func($storageConfig['construct']);
             }

@@ -1,4 +1,4 @@
-# kriss/webman-lock
+# webman-tech/symfony-lock
 
 webman lock plugin
 
@@ -14,12 +14,12 @@ webman lock plugin
 ##  安装
 
 ```bash
-compoer require kriss/webman-lock
+compoer require webman-tech/symfony-lock
 ```
 
 ## 使用
 
-定义一个自己的 Locker 类，比如：`support\facade\Locker.php`，继承 `Kriss\WebmanLock\Locker`
+定义一个自己的 Locker 类，比如：`support\facade\Locker.php`，继承 `WebmanTech\SymfonyLock\Locker`
 
 然后在类上方加入注释（用于代码提示），举例如下：
 
@@ -34,7 +34,7 @@ use Symfony\Component\Lock\LockInterface;
  * @method static LockInterface order(?string $orderId = null, ?float $ttl = null, ?bool $autoRelease = null, ?string $prefix = null)
  * @method static LockInterface changeCash(?string $userId = null, ?float $ttl = null, ?bool $autoRelease = null, ?string $prefix = null)
  */
-class Locker extends \Kriss\WebmanLock\Locker
+class Locker extends \WebmanTech\SymfonyLock\Locker
 {
 }
 ```

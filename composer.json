@@ -1,5 +1,5 @@
 {
-  "name": "kriss/webman-lock",
+  "name": "webman-tech/symfony-lock",
   "type": "library",
   "license": "MIT",
   "description": "webman lock plugin",
@@ -9,7 +9,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Kriss\\WebmanLock\\": "src"
+      "WebmanTech\\SymfonyLock\\": "src"
     }
   },
   "require-dev": {

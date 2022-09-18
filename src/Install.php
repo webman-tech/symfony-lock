@@ -1,5 +1,5 @@
 <?php
-namespace Kriss\WebmanLock;
+namespace WebmanTech\SymfonyLock;
 
 class Install
 {
@@ -9,7 +9,7 @@ class Install
      * @var array
      */
     protected static $pathRelation = array (
-  'config/plugin/kriss/webman-lock' => 'config/plugin/kriss/webman-lock',
+  'config/plugin/webman-tech/symfony-lock' => 'config/plugin/webman-tech/symfony-lock',
 );
 
     /**
